@@ -55,3 +55,16 @@ php artisan queue:work --queue=high,default
 ```php
 class TestMail extends Mailable implements ShouldQueue
 ```
+
+
+# Inversão de depencia no laravel
+- config/app.php
+```php
+public function boot()
+{
+    $this->app->singleton(
+        InterfaceQueIraUser::class,
+        ClasseQueDeveSerInstanciadaNoLugar::class
+    );
+}
+```
