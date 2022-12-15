@@ -31,7 +31,7 @@ class ExampleJob implements ShouldQueue
     public function handle()
     {
         \Log::info('Start '. __CLASS__);
-        sleep(10);
+        throw new \Exception(__CLASS__);
         \Log::info('End '. __CLASS__);
     }
 }

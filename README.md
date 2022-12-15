@@ -48,4 +48,10 @@ ProcessPodcast::dispatch()->onQueue('emails');
 ```sh
 php artisan queue:work --queue=high,default
 ```
+- Os job que falharem são salvo na tabela failed_jobs
 
+# Email de forma assincrona
+- Para colocar pra fila os email basta implementar ShouldQueue
+```php
+class TestMail extends Mailable implements ShouldQueue
+```
