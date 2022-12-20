@@ -68,3 +68,14 @@ public function boot()
     );
 }
 ```
+
+
+# Dicas gerais
+## Criar marca d água com intervation make
+```php
+        $fullPath = Storage::path($path);
+
+        Image::make($fullPath)
+            ->insert(public_path('default.png'))
+            ->save($fullPath);
+```
