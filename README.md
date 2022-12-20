@@ -79,3 +79,12 @@ public function boot()
             ->insert(public_path('default.png'))
             ->save($fullPath);
 ```
+
+## Comandos schedules
+- Agedar para rodar comandos
+```php
+protected function schedule(Schedule $schedule)
+{
+    $schedule->command('inspire')->hourly();
+}
+```
